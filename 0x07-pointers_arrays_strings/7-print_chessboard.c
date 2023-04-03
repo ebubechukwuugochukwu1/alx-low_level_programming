@@ -1,30 +1,27 @@
+
 #include "main.h"
 
 /**
- * _strstr - first occurrence of the substring needle in the string haystack
- * @haystack: main str to be examined
- * @needle: searched in haystack
- * Return: return 0
- **/
-
-char  *_strstr(char *haystack, char *needle)
+ * print_chessboard - print the chessboard, 2d array
+ * @a: 2d array of chars
+ *Return: void
+ */
+void print_chessboard(char (*a)[8])
 {
-	char *str1, *str2; /*Declaring variables*/
+	/*Declaring variables*/
+	int i, j;
 
-	while (*haystack != '\0')
+	i = 0;
+	while (i < 8) /*number repetitions*/
 	{
-		str1 = haystack; /*values*/
-		str2 = needle;
-
-		/*Star WHILE*/
-		while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
+		j = 0;
+		while (j < 8)
 		{
-			haystack++;
-			str2++;
+			_putchar (a[i][j]);
+			j++;
 		}
-		if (*str2 == '\0')
-			return (str1);
-		haystack = str1 + 1;
+		_putchar ('\n'); /*print new line*/
+		i++; /*add +1*/
 	}
-	return (0);
+
 }
